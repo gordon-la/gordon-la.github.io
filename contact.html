@@ -71,7 +71,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="displayCurrentYear()">
 <header>
     <h1>Contact</h1>
     <nav>
@@ -114,13 +114,13 @@
     </section>
 </main>
 <footer>
+    <p>Gordon La <span id="currentYear"></span></p>
     <script>
         function displayCurrentYear() {
             var year = new Date().getFullYear();
             document.getElementById("currentYear").textContent = year;
         }
     </script>
-    <p>Gordon La's Portfolio <span id="currentYear"></span></p>
 </footer>
 </body>
 </html>
