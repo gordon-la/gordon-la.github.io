@@ -45,6 +45,30 @@
             bottom: 0;
             width: 100%;
         }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-bottom: 0.5rem;
+        }
+        form input, form textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            padding: 0.7rem;
+            border: none;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        form button:hover {
+            background: #555;
+        }
     </style>
 </head>
 <body>
@@ -74,6 +98,19 @@
                 document.write('<a href="' + c + '">this email address</a>');
                 //]]>
             </script>. I look forward to connecting with you!</p>
+
+        <form action="mailto:gordonhaesla@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
     </section>
 </main>
 <footer>
