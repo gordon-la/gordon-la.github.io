@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>Gordon La Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,17 +20,29 @@
             padding: 1rem 0;
             text-align: center;
         }
+        nav {
+            background: #444;
+        }
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
         }
         nav ul li {
-            display: inline;
             margin: 0 1rem;
         }
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+            color: #ddd;
         }
         main {
             padding: 2rem;
