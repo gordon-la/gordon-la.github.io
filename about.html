@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Gordon La Portfolio</title>
+    <title>Gordon La Portfolio</title>
     <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #1c1c1c; /* Very dark grey background */
@@ -35,6 +53,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            align-items: center;
         }
 
         nav ul li {
@@ -52,6 +71,13 @@
             color: #ccc; /* Lighter gray on hover */
         }
 
+        .linkedin-logo {
+            width: 24px;
+            height: 24px;
+            margin-left: 1rem;
+        }
+
+        /* FadeIn and fadeOut animations to the main section */
         main {
             padding: 2rem;
             background-color: #1c1c1c; /* Very dark grey background for main content */
@@ -59,6 +85,33 @@
             max-width: 800px;
             margin: 2rem auto;
             flex: 1;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        main.fade-out {
+            animation: fadeOut 0.5s ease-in-out forwards;
+        }
+
+        main p {
+            color: #ccc; /* Light grey color for body text */
+        }
+
+        main h2 {
+            color: #fff; /* White color for the "About Me" header */
+            font-size: 2.5rem; /* Increase the size of the "About Me" header */
+        }
+
+        /* Flexbox container for image and text */
+        .content {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .content img {
+            max-width: 200px; /* Set maximum width for image */
+            margin-right: 2rem; /* Space between image and text */
+            border-radius: 10px; /* Rounded corners for image */
         }
 
         footer {
@@ -73,6 +126,7 @@
     </style>
 </head>
 <body onload="displayCurrentYear()">
+
 <header>
     <h1>GORDON LA</h1>
     <nav>
@@ -81,16 +135,27 @@
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="projects.html">PROJECTS</a></li>
             <li><a href="contact.html">CONTACT</a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/gordon-la" target="_blank">
+                    <img src="assets/LinkedIn Logo.webp" alt="LinkedIn" class="linkedin-logo">
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
+
 <main>
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi there! I'm Gordon La, an aspiring machine learning engineer and graduate student with a passion for artificial intelligence and data-driven solutions. I have a solid background in machine learning algorithms, Python, and data analysis, with a focus on applying these skills in real-world scenarios.</p>
-        <p>I’ve worked on projects ranging from developing algorithmic trading systems to optimizing betting strategies using Monte Carlo simulations. These experiences have sharpened my problem-solving skills and given me practical insight into machine learning models.</p>
-        <p>In my free time, I enjoy exploring the latest advancements in AI, reading about new technologies, and challenging myself with personal projects. I’m always eager to take on new challenges and collaborate with others who share my enthusiasm for machine learning and artificial intelligence.</p>
-        <p>Feel free to explore my projects and reach out if you would like to connect or collaborate!</p>
+        <div class="content">
+            <div>
+                <p>Hi there! I'm Gordon La, an aspiring machine learning engineer and graduate student with a passion for artificial intelligence and data-driven solutions. I have a solid background in machine learning algorithms, Python, and data analysis, with a focus on applying these skills in real-world scenarios.</p>
+                <p>I’ve worked on projects ranging from developing algorithmic trading systems to optimizing betting strategies using Monte Carlo simulations. These experiences have sharpened my problem-solving skills and given me practical insight into machine learning models.</p>
+                <p>In my free time, I enjoy exploring the latest advancements in AI, reading about new technologies, and challenging myself with personal projects. I’m always eager to take on new challenges and collaborate with others who share my enthusiasm for machine learning and artificial intelligence.</p>
+                <p>Feel free to explore my projects and reach out if you would like to connect or collaborate! ✌️</p>
+            </div>
+            <img src="assets/Profile Photo.jpeg" alt="Gordon La" style="margin-left: 35px;">
+        </div>
     </section>
 </main>
 <footer>
@@ -100,6 +165,25 @@
             var year = new Date().getFullYear();
             document.getElementById("currentYear").textContent = year;
         }
+
+        // JavaScript to handle fade-out on link click
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('a');
+
+            links.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent immediate navigation
+
+                    // Add fade-out class to main
+                    document.querySelector('main').classList.add('fade-out');
+
+                    // Wait for the animation to finish before navigating
+                    setTimeout(function () {
+                        window.location.href = link.href;
+                    }, 500); // Matches the fade-out duration
+                });
+            });
+        });
     </script>
 </footer>
 </body>
