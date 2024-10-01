@@ -9,75 +9,87 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #1c1c1c; /* Very dark grey background */
+            color: #fff; /* White text */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
+
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #1c1c1c; /* Very dark grey header */
+            color: #fff; /* White text */
         }
-        nav {
-            background: #444;
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
         }
+
         nav ul {
             list-style: none;
-            padding: 0;
             margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
         }
+
         nav ul li {
-            margin: 0 1rem;
+            margin-left: 2rem;
         }
+
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
+            font-size: 1rem;
+            transition: color 0.3s;
         }
+
         nav ul li a:hover {
-            background-color: #555;
-            color: #ddd;
+            color: #ccc; /* Lighter gray on hover */
         }
+
         main {
             padding: 2rem;
-            background: #fff;
+            background-color: #1c1c1c; /* Very dark grey background for main content */
+            color: #fff; /* White text */
             max-width: 800px;
             margin: 2rem auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             flex: 1;
         }
+
         footer {
-            background: #333;
-            color: #fff;
+            background: #1c1c1c; /* Very dark grey footer */
+            color: #fff; /* White text */
             text-align: center;
             padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body onload="displayCurrentYear()">
 <header>
-    <h1>About Me</h1>
+    <h1>GORDON LA</h1>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi there! I'm [Your Name], a passionate software developer with a love for creating innovative and efficient solutions. With a background in [Your Field/Expertise], I have a strong foundation in [Key Skills/Technologies].</p>
-        <p>I have worked on various projects, ranging from [Type of Projects, e.g., web applications, mobile apps, machine learning models], which have honed my skills in [Relevant Skills, e.g., full-stack development, data analysis, UI/UX design].</p>
-        <p>When I'm not coding, you can find me [Your Hobbies or Interests, e.g., hiking, reading books, playing guitar], and I'm always eager to learn new things and take on new challenges.</p>
+        <p>Hi there! I'm Gordon La, an aspiring machine learning engineer and graduate student with a passion for artificial intelligence and data-driven solutions. I have a solid background in machine learning algorithms, Python, and data analysis, with a focus on applying these skills in real-world scenarios.</p>
+        <p>I’ve worked on projects ranging from developing algorithmic trading systems to optimizing betting strategies using Monte Carlo simulations. These experiences have sharpened my problem-solving skills and given me practical insight into machine learning models.</p>
+        <p>In my free time, I enjoy exploring the latest advancements in AI, reading about new technologies, and challenging myself with personal projects. I’m always eager to take on new challenges and collaborate with others who share my enthusiasm for machine learning and artificial intelligence.</p>
         <p>Feel free to explore my projects and reach out if you would like to connect or collaborate!</p>
     </section>
 </main>

@@ -9,76 +9,93 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #1c1c1c; /* Very dark grey background */
+            color: #fff; /* White text */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
+
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #1c1c1c; /* Very dark grey header */
+            color: #fff; /* White text */
         }
-        nav {
-            background: #444;
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
         }
+
         nav ul {
             list-style: none;
-            padding: 0;
             margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
         }
+
         nav ul li {
-            margin: 0 1rem;
+            margin-left: 2rem;
         }
+
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
+            font-size: 1rem;
+            transition: color 0.3s;
         }
+
         nav ul li a:hover {
-            background-color: #555;
-            color: #ddd;
+            color: #ccc; /* Lighter gray on hover */
         }
+
         main {
             padding: 2rem;
-            background: #fff;
+            background-color: #1c1c1c; /* Very dark grey background for main content */
+            color: #fff; /* White text */
             max-width: 800px;
             margin: 2rem auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             flex: 1;
         }
+
         footer {
-            background: #333;
-            color: #fff;
+            background: #1c1c1c; /* Very dark grey footer */
+            color: #fff; /* White text */
             text-align: center;
             padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body onload="displayCurrentYear()">
+
 <header>
-    <h1>Gordon La</h1>
+    <h1>GORDON LA</h1>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
 </header>
+
 <main>
     <section id="home">
         <h2>Welcome to My Portfolio</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a href="https://docs.google.com/document/d/17yf_Bvx8I1eBkVUoCVUdnkJ-6xUX2B0docxqbUUjDr8/edit" class="download-link" target="_blank">View My Resume</a>
+        <p>I’m an artificial intelligence enthusiast and Georgia Tech computer science graduate
+            student with hands-on experience in machine learning tools and algorithms.
+            My specialties lie in Python, data analysis, and machine learning frameworks.</p>
+        <a href="https://docs.google.com/document/d/17yf_Bvx8I1eBkVUoCVUdnkJ-6xUX2B0docxqbUUjDr8/edit" class="download-link" target="_blank" style="color: #fff; text-decoration: underline;">View My Resume</a>
     </section>
 </main>
+
 <footer>
     <p>&copy; <span id="currentYear"></span> Gordon La Portfolio</p>
     <script>
@@ -88,5 +105,6 @@
         }
     </script>
 </footer>
+
 </body>
 </html>
