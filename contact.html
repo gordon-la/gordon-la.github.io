@@ -5,59 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Gordon La Portfolio</title>
     <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #1c1c1c; /* Very dark grey background */
+            color: #fff; /* White text */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
+
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #1c1c1c; /* Very dark grey header */
+            color: #fff; /* White text */
         }
-        nav {
-            background: #444;
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
         }
+
         nav ul {
             list-style: none;
-            padding: 0;
             margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
+            align-items: center;
         }
+
         nav ul li {
-            margin: 0 1rem;
+            margin-left: 2rem;
         }
+
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
+            font-size: 1rem;
+            transition: color 0.3s;
         }
+
         nav ul li a:hover {
-            background-color: #555;
-            color: #ddd;
+            color: #ccc; /* Lighter gray on hover */
         }
+
+        .linkedin-logo {
+            width: 24px;
+            height: 24px;
+            margin-left: 1rem;
+        }
+
+        /* FadeIn and fadeOut animations to the main section */
         main {
             padding: 2rem;
-            background: #fff;
+            background-color: #1c1c1c; /* Very dark grey background for main content */
+            color: #fff; /* White text */
             max-width: 800px;
             margin: 2rem auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             flex: 1;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 0.5s ease-in-out forwards;
         }
+
+        main.fade-out {
+            animation: fadeOut 0.5s ease-in-out forwards;
+        }
+
+        main p {
+            color: #ccc; /* Light grey color for body text */
+        }
+
+        main h2 {
+            color: #fff; /* White color for the "About Me" header */
+            font-size: 2.5rem; /* Increase the size of the "About Me" header */
+        }
+
+        /* Flexbox container for image and text */
+        .content {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .content img {
+            max-width: 200px; /* Set maximum width for image */
+            margin-right: 2rem; /* Space between image and text */
+            border-radius: 10px; /* Rounded corners for image */
+        }
+
         footer {
-            background: #333;
-            color: #fff;
+            background: #1c1c1c; /* Very dark grey footer */
+            color: #fff; /* White text */
             text-align: center;
             padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
+
         form {
             display: flex;
             flex-direction: column;
@@ -68,31 +134,43 @@
         form input, form textarea {
             margin-bottom: 1rem;
             padding: 0.5rem;
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             border-radius: 4px;
+            background-color: #333;
+            color: #ccc;
+            font-size: 16px;
         }
         form button {
             padding: 0.7rem;
             border: none;
-            background: #333;
+            background: #888; /* Lighter grey */
             color: #fff;
             cursor: pointer;
             border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
         }
+
         form button:hover {
-            background: #555;
+            background: #aaa;
         }
     </style>
 </head>
 <body onload="displayCurrentYear()">
 <header>
-    <h1>Gordon La</h1>
+    <h1>GORDON LA</h1>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="resume.html">RESUME</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/gordon-la" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/LinkedIn Logo.webp" alt="LinkedIn" class="linkedin-logo">
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -107,7 +185,7 @@
                 var d = "@";
                 var e = "gmail.com";
                 var f = a + b + c + d + e;
-                document.write('<a href="' + f + '">gordonhaesla@gmail.com</a>');
+                document.write('<a href="' + f + '" style="color: #ccc;">gordonhaesla@gmail.com</a>');
             </script> or by filling out the form below. I look forward to connecting with you!</p>
 
         <form action="https://formsubmit.co/gordonhaesla@gmail.com" method="POST">
@@ -131,6 +209,30 @@
             var year = new Date().getFullYear();
             document.getElementById("currentYear").textContent = year;
         }
+
+        // JavaScript to handle fade-out on link click
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('a');
+
+            links.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    // Check if the clicked link is the LinkedIn logo
+                    if (link.querySelector('img') && link.querySelector('img').classList.contains('linkedin-logo')) {
+                        return; // Do nothing, don't trigger fade-out
+                    }
+
+                    event.preventDefault(); // Prevent immediate navigation
+
+                    // Add fade-out class to main
+                    document.querySelector('main').classList.add('fade-out');
+
+                    // Wait for the animation to finish before navigating
+                    setTimeout(function () {
+                        window.location.href = link.href;
+                    }, 500); // Matches the fade-out duration
+                });
+            });
+        });
     </script>
 </footer>
 </body>
