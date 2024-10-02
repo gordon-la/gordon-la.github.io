@@ -137,7 +137,7 @@
             <li><a href="resume.html">RESUME</a></li>
             <li><a href="contact.html">CONTACT</a></li>
             <li>
-                <a href="https://www.linkedin.com/in/gordon-la" target="_blank">
+                <a href="https://www.linkedin.com/in/gordon-la" target="_blank" rel="noopener noreferrer">
                     <img src="assets/LinkedIn Logo.webp" alt="LinkedIn" class="linkedin-logo">
                 </a>
             </li>
@@ -173,6 +173,11 @@
 
             links.forEach(function (link) {
                 link.addEventListener('click', function (event) {
+                    // Check if the clicked link is the LinkedIn logo
+                    if (link.querySelector('img') && link.querySelector('img').classList.contains('linkedin-logo')) {
+                        return; // Do nothing, don't trigger fade-out
+                    }
+
                     event.preventDefault(); // Prevent immediate navigation
 
                     // Add fade-out class to main
