@@ -23,6 +23,16 @@
             }
         }
 
+        /* FadeIn animation specifically for portfolio image */
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -106,13 +116,22 @@
         /* Flexbox container for image and text */
         .content {
             display: flex;
-            align-items: flex-start;
+            align-items: flex-start; /* Aligns items to the top */
+            margin-top: 2rem; /* Adds space above the content */
         }
 
         .content img {
-            max-width: 200px; /* Maximum width for image */
-            margin-right: 2rem; /* Space between image and text */
-            border-radius: 10px; /* Rounded corners for image */
+            max-width: 350px; /* Image width */
+            margin-left: 35px;
+            transform: scaleX(-1);
+            opacity: 0;
+            animation: fadeInImage .8s ease-in-out forwards;
+            animation-delay: .5s;
+        }
+
+        .content p {
+            color: #ccc; /* light grey */
+            line-height: 1.6; /* improved readability */
         }
 
         footer {
@@ -149,10 +168,12 @@
 <main>
     <section id="home">
         <h2>Welcome to My Portfolio</h2>
-        <p>I’m an artificial intelligence enthusiast and Georgia Tech computer science graduate
-            student with hands-on experience in machine learning tools and algorithms.
-            My specialties lie in Python, data analysis, and machine learning frameworks.</p>
-        <a href="https://docs.google.com/document/d/17yf_Bvx8I1eBkVUoCVUdnkJ-6xUX2B0docxqbUUjDr8/edit" class="download-link" target="_blank" style="color: #fff; text-decoration: underline;">View My Resume</a>
+        <div class="content">
+            <p>I’m an artificial intelligence enthusiast and Georgia Tech computer science graduate
+                student with hands-on experience in machine learning tools and algorithms.
+                <br>My specialties lie in Python, data analysis, and machine learning frameworks.</p>
+            <img src="assets/index-image1.png" alt="Portfolio image">
+        </div>
     </section>
 </main>
 
